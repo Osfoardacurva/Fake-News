@@ -11,29 +11,53 @@ fake.html
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
 
     body {
       background: #0f172a;
-      color: white;
+      color: #f1f5f9;
       padding: 20px;
-      text-align: center;
+      line-height: 1.7;
     }
 
     header {
       padding: 30px 10px;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      margin-bottom: 15px;
     }
 
-    p {
+    header p {
       opacity: 0.9;
-      margin-bottom: 10px;
+      max-width: 700px;
+      margin: 0 auto;
       line-height: 1.8;
+    }
+
+    nav {
+      margin: 25px 0;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 8px 12px;
+      border: 1px solid #1e293b;
+      border-radius: 20px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      background: #1e293b;
     }
 
     .container {
@@ -41,34 +65,88 @@ fake.html
       margin: auto;
       text-align: left;
       background: #111827;
-      padding: 20px;
-      border-radius: 12px;
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid #1e293b;
     }
 
     h2 {
-      margin-top: 20px;
+      margin: 30px 0 15px;
       color: #38bdf8;
+      font-size: 1.5rem;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 15px;
+      opacity: 0.95;
     }
 
     ul {
-      margin-left: 20px;
-      margin-top: 10px;
-      line-height: 1.8;
+      margin: 15px 0 15px 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    li::marker {
+      color: #38bdf8;
+    }
+
+    .destaque {
+      background: #1e293b;
+      padding: 15px;
+      border-left: 4px solid #38bdf8;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .sites-checagem {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 15px 0;
+    }
+
+    .sites-checagem a {
+      background: #1e293b;
+      color: #38bdf8;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    .sites-checagem a:hover {
+      background: #38bdf8;
+      color: #0f172a;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
+      margin-top: 30px;
+      padding: 12px 24px;
       background: #38bdf8;
-      color: black;
-      border-radius: 20px;
+      color: #0f172a;
+      border-radius: 25px;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.2s;
     }
 
     .btn:hover {
       background: #0ea5e9;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 15px; }
+      .container { padding: 18px; }
     }
   </style>
 </head>
@@ -77,88 +155,69 @@ fake.html
 
 <header>
   <h1>🧠 Fake News - Aprenda a se proteger</h1>
-  <p>Informação errada se espalha rapidamente na internet. Entenda profundamente o que são fake news, como funcionam, como identificar e como se proteger delas no dia a dia.</p>
+  <p>Informação errada se espalha rapidamente na internet. Entenda o que são fake news, como funcionam, como identificar e como se proteger delas no dia a dia.</p>
+  
+  <nav>
+    <a href="#o-que-sao">O que são</a>
+    <a href="#identificar">Como identificar</a>
+    <a href="#combater">Como combater</a>
+  </nav>
 </header>
 
 <div class="container">
 
-  <h2>📌 O que são Fake News?</h2>
-
+  <h2 id="o-que-sao">📌 O que são Fake News?</h2>
   <p>
-    Fake news são informações falsas, manipuladas ou distorcidas que são criadas com o objetivo de parecerem verdadeiras e enganar as pessoas.
-    Elas podem ser totalmente inventadas ou podem pegar fatos reais e distorcê-los, removendo partes importantes ou mudando o contexto da informação.
+    Fake news são informações falsas, manipuladas ou distorcidas criadas para parecerem verdadeiras e enganar as pessoas.
+    Elas podem ser totalmente inventadas ou pegar fatos reais e tirar de contexto.
   </p>
-
   <p>
-    Esse tipo de conteúdo é muito perigoso porque se espalha rapidamente na internet, principalmente através de redes sociais, aplicativos de mensagens e sites sem credibilidade.
-    Muitas vezes, essas informações são compartilhadas sem verificação, apenas porque parecem chocantes ou interessantes.
+    Esse conteúdo é perigoso porque se espalha rápido em redes sociais, WhatsApp e sites sem credibilidade.
+    Muitas vezes são compartilhadas sem verificação, só porque parecem chocantes.
   </p>
+  
+  <div class="destaque">
+    <strong>Exemplo real:</strong> "Beber água quente com limão cura Covid-19". 
+    Esse boato circulou em 2020 e não tem nenhuma comprovação científica. Mas muita gente compartilhou por medo.
+  </div>
 
+  <h2 id="identificar">⚠️ Como identificar Fake News</h2>
   <p>
-    As fake news podem causar impactos graves, como confusão na sociedade, prejuízos financeiros, influência em decisões importantes e até conflitos entre pessoas.
-    Por isso, é essencial desenvolver o hábito de sempre analisar a informação antes de acreditar ou compartilhar.
+    Identificar fake news exige atenção e pensamento crítico. Muitas são bem produzidas e parecem confiáveis à primeira vista.
   </p>
-
-  <h2>⚠️ Como identificar Fake News</h2>
-
-  <p>
-    Identificar fake news exige atenção, pensamento crítico e análise cuidadosa das informações recebidas.
-    Nem sempre é fácil perceber que uma notícia é falsa, pois muitas são bem produzidas e parecem confiáveis à primeira vista.
-  </p>
-
-  <p>
-    Um dos principais sinais de alerta são títulos exagerados, que usam emoção como medo, choque ou curiosidade extrema para atrair cliques.
-    Outro ponto importante é observar a fonte da informação, verificando se o site ou perfil é confiável e reconhecido.
-  </p>
-
-  <p>
-    Também é fundamental comparar a notícia com outras fontes confiáveis, pois informações verdadeiras geralmente aparecem em vários veículos de comunicação.
-    Além disso, erros de português, falta de autor, imagens fora de contexto e datas antigas são fortes indicativos de fake news.
-  </p>
-
-  <p>
-    Desenvolver o hábito de checar antes de compartilhar ajuda a reduzir a propagação de informações falsas e contribui para uma internet mais segura e consciente.
-  </p>
-
+  
   <ul>
-    <li>Verifique se o site ou perfil é confiável e conhecido</li>
-    <li>Desconfie de títulos muito exagerados ou emocionais</li>
-    <li>Procure a mesma notícia em diferentes fontes confiáveis</li>
-    <li>Confira sempre a data da publicação</li>
-    <li>Observe erros de escrita e falta de autoria</li>
-    <li>Analise se a imagem não está fora de contexto</li>
+    <li><strong>Títulos exagerados:</strong> "URGENTE!!! VOCÊ NÃO VAI ACREDITAR" - usam emoção pra gerar clique</li>
+    <li><strong>Fonte desconhecida:</strong> Site que você nunca ouviu falar, sem "Sobre nós" ou contato</li>
+    <li><strong>Sem data/autor:</strong> Notícias antigas republicadas como novas, ou texto sem quem escreveu</li>
+    <li><strong>Erros de português:</strong> Muitos erros grosseiros indicam falta de revisão profissional</li>
+    <li><strong>Só 1 lugar publicou:</strong> Se for verdade importante, vários jornais confiáveis vão cobrir</li>
+    <li><strong>Imagem fora de contexto:</strong> Foto de 2015 usada pra falar de algo que aconteceu hoje</li>
   </ul>
 
-  <h2>🛡️ Como combater Fake News</h2>
-
+  <h2 id="combater">🛡️ Como combater Fake News</h2>
   <p>
-    Combater fake news é uma responsabilidade de todos os usuários da internet, pois cada compartilhamento pode ajudar a espalhar ou a impedir a desinformação.
-    O primeiro passo é sempre verificar cuidadosamente qualquer informação antes de repassar para outras pessoas.
+    Combater fake news é responsabilidade de todos. Cada compartilhamento pode espalhar ou impedir a desinformação.
   </p>
 
-  <p>
-    Existem sites e plataformas de checagem de fatos que ajudam a confirmar se uma notícia é verdadeira ou falsa.
-    Utilizar essas ferramentas é uma forma eficaz de evitar ser enganado por conteúdos manipulados.
-  </p>
-
-  <p>
-    Outro ponto importante é evitar compartilhar notícias baseadas apenas em emoções, pois muitas fake news são criadas exatamente para provocar reações rápidas.
-    Pensar antes de compartilhar é uma atitude simples, mas muito poderosa.
-  </p>
-
-  <p>
-    Além disso, conversar com outras pessoas e explicar quando algo é falso ajuda a diminuir a circulação de informações erradas.
-    Quanto mais pessoas estiverem conscientes sobre o problema, menor será o impacto das fake news na sociedade.
-  </p>
+  <p><strong>1. Use sites de checagem antes de compartilhar:</strong></p>
+  <div class="sites-checagem">
+    <a href="https://www.aosfatos.org" target="_blank">Aos Fatos</a>
+    <a href="https://lupa.uol.com.br" target="_blank">Agência Lupa</a>
+    <a href="https://g1.globo.com/fato-ou-fake" target="_blank">Fato ou Fake - G1</a>
+    <a href="https://www.boatos.org" target="_blank">Boatos.org</a>
+  </div>
 
   <ul>
-    <li>Sempre verifique a origem da informação</li>
-    <li>Use sites de checagem de fatos confiáveis</li>
-    <li>Não compartilhe nada sem confirmar</li>
-    <li>Evite agir por impulso ou emoção</li>
-    <li>Ajude outras pessoas a identificar notícias falsas</li>
-    <li>Promova informação correta e consciente</li>
+    <li><strong>Pare 1 minuto:</strong> Recebeu algo chocante? Respire antes de repassar</li>
+    <li><strong>Cheque a fonte:</strong> Jogue o título no Google + "é verdade"</li>
+    <li><strong>Converse:</strong> Se um amigo mandou fake, avise com respeito e mande a checagem</li>
+    <li><strong>Denuncie:</strong> WhatsApp, Instagram e Facebook têm botão pra denunciar notícia falsa</li>
   </ul>
+
+  <div class="destaque">
+    <strong>Regra de ouro:</strong> Na dúvida, não compartilhe. É melhor perder um "furo" do que espalhar mentira.
+  </div>
 
   <a href="./index.html" class="btn">⬅ Voltar</a>
 
